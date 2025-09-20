@@ -1,5 +1,7 @@
 import random
 
+global player
+player = None
 elements = ["Air", "Earth", "Fire", "Water"]
 
 class Character:
@@ -52,8 +54,7 @@ class Dwarf(Character):
         self.mana = 100
 
 def choose_character():
-
-    player = None
+    global player
     player_race = input("Choose your character's race (Human, Elf, Dwarf): ")
 
     if player_race.lower() == "human":
@@ -86,3 +87,5 @@ def choose_character():
     else:
         print("Character creation failed.")
         print("Please try again.")
+    
+    return player
