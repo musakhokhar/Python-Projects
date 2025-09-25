@@ -13,10 +13,16 @@ class Person():
     
 def addperson(self):
     print("Enter Name")
-    name = str(input())
+    name = str(input()).lower()
     print("Enter Age")
-    age = int(input())
-    print("Enter Gender")
-    gender = str(input())
+    age = abs(int(input()))
+    gender = ""
+    while gender == "":
+        print("Enter Gender")
+        choice = str(input()).lower()
+        if choice == "male" or choice == "female":
+            gender = choice
+        else:
+            print("Invalid Gender, try again")
     people[name] = Person(name, age, gender)
     print("Person Added")
